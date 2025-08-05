@@ -43,7 +43,7 @@ def log_ingestion(record, status, error_msg=None):
     os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
     with open(LOG_FILE, "a") as f:
         f.write(json.dumps(log_entry) + "\n")
-    print(f"📝 Ingestion Log: {log_entry}")
+    print(f"Ingestion Log: {log_entry}")
     
 # ====== Send Messages to Kafka ======
 for record in sample_data:
