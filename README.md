@@ -20,12 +20,19 @@ This project simulates a scalable ingestion pipeline for global supply chain dat
 
 supply-chain-ingestion-pipeline/
 ├── dags/                   ← Airflow DAGs
+
 ├── kafka_producer/        ← Kafka producer scripts
+
 ├── spark_jobs/            ← ETL with PySpark
+
 ├── api/                   ← Lineage APIs with FastAPI
+
 ├── data/                  ← Sample input files (CSV/JSON)
+
 ├── ingestion_log/         ← Log schema, data, and queries
+
 ├── config/                ← Region-based config files
+
 ├── notebooks/             ← Databricks notebooks for testing
 
 
