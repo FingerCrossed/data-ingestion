@@ -19,6 +19,7 @@ This project simulates a scalable ingestion pipeline for global supply chain dat
 
 
 supply-chain-ingestion-pipeline/
+
 ├── dags/                   ← Airflow DAGs
 
 ├── kafka_producer/        ← Kafka producer scripts
