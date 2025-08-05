@@ -31,7 +31,20 @@ sample_data = [
         "order_date": "2025-08-04"
     }
 ]
-
+# ====== Log ingestion status ======
+def log_ingestion(record, status, error_msg=None):
+    log_entry = {
+        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "market": record.get("market"),
+        "order_id": record.get("order_id"),
+        "status": status,  # "SUCCESS" or "FAILURE"
+        "error": error_msg or ""
+    }
+    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
+    with open(LOG_FILE, "a") as f:
+        f.write(json.dumps(log_entry) + "\n")
+    print(f"📝 Ingestion Log: {log_entry}")
+    
 # ====== Send Messages to Kafka ======
 for record in sample_data:
     try:
